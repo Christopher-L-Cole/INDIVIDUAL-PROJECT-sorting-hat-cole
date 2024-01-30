@@ -1,3 +1,11 @@
 body {
   background-color: aqua;
 }
+
+h2 {
+  font-family: fantasy;
+}
+
+.card-text {
+  font-family: fantasy;
+}
