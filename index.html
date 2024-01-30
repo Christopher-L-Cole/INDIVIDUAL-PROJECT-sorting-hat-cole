@@ -5,9 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hogwart's Sorting Hat</title>
   <link rel="stylesheet" href="main.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+  <div class="container">
+    <h2>Welcome to Hogwart's House Sorting Ceremony</h2>
+    <form action="/action_page.php">
+      <div class="form-group">
+      <div class="card" style="width: 18rem;">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/39eae60d-6eef-4365-9831-048467defeb1/ddw0anx-ed6b1f6d-f130-44af-8e7c-6871c42ebb10.png?			token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM5ZWFlNjBkLTZlZWYtNDM2NS05ODMxLTA0ODQ2N2RlZmViMVwvZGR3MGFueC1lZDZiMWY2ZC1mMTMwLTQ0YWYtOGU3Yy02ODcxYzQyZWJiMTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.4EkZqLmrlCI3h3ul8bCq9cca9R0-Bl0hJ6bpC-p6yxw" class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text">Welcome! I am the Hogwarts Sorting Hat</p>
+        </div>
+        <label for="studentName">Student's Name:</label>
+        <input type="text" class="form-control" placeholder="Enter name" id="studentName">
+      </div>
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label"> </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Sort</button>
+    </form>
+  </div>
+  <div id="house-buttons">
+    <button type="button" id="All" class="btn btn-secondary btn-lg">All</button>
+    <button type="button" id="Gryffindor" class="btn btn-danger btn-lg">Gryffindor</button>
+    <button type="button" id="Slytherin" class="btn btn-success btn-lg">Slytherin</button>
+    <button type="button" id="Hufflepuff" class="btn btn-warning btn-lg">Hufflepuff</button>
+    <button type="button" id="Ravenclaw" class="btn btn-primary btn-lg">Ravenclaw</button>
+</div>
   
   <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
