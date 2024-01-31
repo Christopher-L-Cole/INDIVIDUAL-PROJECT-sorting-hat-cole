@@ -4,8 +4,28 @@ body {
 
 h2 {
   font-family: fantasy;
+  text-align: center;
 }
 
 .card-text {
   font-family: fantasy;
+}
+
+#house-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border: 3px solid rgb(128, 41, 0);
+  padding: 5px;
+}
+.card {
+  margin: auto;
+}
+
+.btn {
+  background-color: rgb(129, 6, 6) !important;
+  color: bisque !important;
+  margin: 10px;
+  width: 75%;
 }
