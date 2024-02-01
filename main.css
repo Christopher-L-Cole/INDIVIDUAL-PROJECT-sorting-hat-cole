@@ -1,5 +1,5 @@
 body {
-  background-color: aqua;
+  background-color: rgb(57, 58, 58) !important;
 }
 
 h2 {
@@ -9,6 +9,7 @@ h2 {
 
 .card-text {
   font-family: fantasy;
+  text-align: center;
 }
 
 #house-buttons {
@@ -21,6 +22,7 @@ h2 {
 }
 .card {
   margin: auto;
+  font-family: fantasy;
 }
 
 .btn {
@@ -28,4 +30,5 @@ h2 {
   color: bisque !important;
   margin: 10px;
   width: 75%;
+  font-family: fantasy !important;
 }

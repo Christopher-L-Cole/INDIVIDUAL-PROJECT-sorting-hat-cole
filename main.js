@@ -13,7 +13,6 @@ const students = [
   }
 ];  
 
-const voldysStudents = [];
 
 const app = document.querySelector('#app')
 // app.innerHTML = "testing"
@@ -26,12 +25,11 @@ const renderToDom = (divId, htmlToRender) => {
 const cardsOnDom = (students) => {
   let domString = ""
   students.map(student => {
-  domString += `<div class="card" style="width: 18rem;">
-    <h5 class="card-title">${student.name}</h5>
-    <img src="${student.imageUrl}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">House: ${student.house}</p>
-        <footer class="card-footer"></footer>
+    domString += `<div class="card" style="width: 18rem;">
+      <h5 class="card-title">${student.name}</h5>
+      <img src="${student.imageUrl}" class="card-img-top" alt="${student.name}">
+      <div class="card-body">
+        <p class="card-text">House: ${student.house}</p> 
          <button class="btn btn-danger" id="delete--${student.id}" class="delbtn">Expel</button>
 </div>
 </div>`;
@@ -46,16 +44,6 @@ const gryfButton = document.querySelector("#Gryffindor")
 const slyButton = document.querySelector("#Slytherin")
 const huffButton = document.querySelector("#Hufflepuff")
 const ravenButton = document.querySelector("#Ravenclaw")
-
-const filter = (house) => {
-  const houseArray = [];
-  students.map(student => {
-    if (student.house === house) {
-      houseArray.push(student);
-    }
-    cardsOnDom(houseArray);
-  })
-}
 
 //add click even to show all the students on button cluck using the function we created
 gryfButton.addEventListener("click", () => {
@@ -83,6 +71,21 @@ allButton.addEventListener("click", () => {
   console.log("clicks");
 });
 
-const startApp = () => {
-  cardsOnDom(students)
+//not working yet// works now i had to add students as an argument
+const filter = (students, house) => {
+  const houseArray = [];
+  students.map(student => {
+    if(student.house === house) {
+      houseArray.push(student);
+    }
+    cardsOnDom(houseArray);
+  })
 }
+
+
+
+const startApp = () => {
+  cardsOnDom(students);
+  e();
+}
+startApp();
