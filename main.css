@@ -2,9 +2,10 @@ body {
   background-color: rgb(57, 58, 58) !important;
 }
 
-h2 {
+.container h2 {
   font-family: fantasy;
   text-align: center;
+  color: bisque;
 }
 
 .card-text {

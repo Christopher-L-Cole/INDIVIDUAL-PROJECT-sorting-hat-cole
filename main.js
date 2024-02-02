@@ -3,19 +3,18 @@ const students = [
     id: 1,
     name: "Snape",
     house: "Slytherin",
-    imageUrl: "https://hips.hearstapps.com/cos.h-cdn.co/assets/16/02/1024x768/sd-aspect-1452789266-professor-severus-snape-harry-potter-1.jpg?resize=1200:*",
   },
   {
     id: 2,
     name: "Harry Potter",
     house: "Gryffindor",
-    imageUrl: "https://hips.hearstapps.com/hmg-prod/images/mv5bogi0ogi5ztmtnwm4ys00zwizlthmymytzgnknzdkotnjndkxxkeyxkfqcgdeqxvynjq4ode4mzqat-v1-sy1000-cr0-0-1528-1000-al-1589922130.jpg?crop=0.656xw:1.00xh;0.119xw,0&resize=640:*",
   }
 ];  
 
+const voldysStudents = [];
+
 
 const app = document.querySelector('#app')
-// app.innerHTML = "testing"
 
 const renderToDom = (divId, htmlToRender) => {
   const selectedDiv = document.querySelector(divId);
@@ -27,7 +26,6 @@ const cardsOnDom = (students) => {
   students.map(student => {
     domString += `<div class="card" style="width: 18rem;">
       <h5 class="card-title">${student.name}</h5>
-      <img src="${student.imageUrl}" class="card-img-top" alt="${student.name}">
       <div class="card-body">
         <p class="card-text">House: ${student.house}</p> 
          <button class="btn btn-danger" id="delete--${student.id}" class="delbtn">Expel</button>
@@ -71,7 +69,7 @@ allButton.addEventListener("click", () => {
   console.log("clicks");
 });
 
-//not working yet// works now i had to add students as an argument
+// works now i had to add students as an argument
 const filter = (students, house) => {
   const houseArray = [];
   students.map(student => {
@@ -82,10 +80,44 @@ const filter = (students, house) => {
   })
 }
 
+//Create 1. select the form on the dom
+const form = document.querySelector('form');
+// form.addEventListener('submit'), (e) => {
+//   e.preventDefault()
+// }
+
+//sort randomizer//
+const assignRandomHouse = () => {
+  const randomizer = Math.floor(Math.random() * 4);
+  const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]
+  // const name = document.querySelector("#studentName");
+  return houses[randomizer];
+};
+// 2. create a function that grabs all the values from the form, pushes the new object to the array, 
+//then repaints the DOM with the new teammate
+const newStudent = () => {
+  const newStudentObj = {
+    id: students.length + 1,
+    name: document.querySelector("#studentName").value,
+    house: assignRandomHouse(), //it worked
+  };
+  students.push(newStudentObj);
+  cardsOnDom(students);
+  form.reset();
+};
+
+// 3. Add an event listener for the form submit and pass it the function (callback)
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  newStudent();
+});
+
+
+
+
 
 
 const startApp = () => {
   cardsOnDom(students);
-  e();
-}
+};
 startApp();
